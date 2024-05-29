@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>sin_in</title>
+    </head>
+    <style type="text/css">
+        body
+        {
+            background-image:linear-gradient(to top,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(images\ \(10\).jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .form
+        {
+            text-align: center;
+            height: 450px;
+            width: 600px;
+            background:linear-gradient(to top,rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+            margin-left: 200px;
+            margin-top: 65px;
+            border-radius: 20px;
+        }
+        h1
+        {
+            font-size: 60px;
+            color:rgb(134, 0, 0);
+        }
+        .text
+        {
+            width: 500px;
+            border-bottom: 1px solid white;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            background: transparent;
+            color: white;
+        }
+        .singin:hover
+        {
+            background-color: rgba(148, 2, 2, 0.74);
+        }
+        .gender
+        {
+            color:rgba(255, 255, 255, 0.541);
+        }
+        p
+        {
+            color: white;
+            background-color: rgba(0,0,0,0.5);
+            margin-top: 50px;
+            padding-left: 200px;
+        }
+        p a
+        {
+            color: red;
+            text-decoration: none;
+        }
+    </style>
+    <body>
+        <div>
+            <p><a href="mainpage.html">Home</a> / Sing_in</p>
+            <form class="form" action="movies.html" method="post" name="form">
+                <h1>MARVEL</h1>
+                <input type="text" name="name" placeholder="Enter your name" class="text" required autofocus/><br>
+                <br>
+                <input type="date" name="dob" placeholder="Date Of Birth" class="text" style="color:rgba(255, 255, 255, 0.541)" required/><br>
+                <br>
+                <input type="radio" name="gender" required class="gender" /><span style="color:rgba(255, 255, 255, 0.541)">Male</span>
+                <input type="radio" name="gender" required class="gender" /><span style="color:rgba(255, 255, 255, 0.541)">Fmale</span><br>
+                <br>
+                <select name="lang" class="text" style="color:rgba(255, 255, 255, 0.541)" required>
+                    <option>English</option>
+                    <option>Gujarati</option>
+                    <option>Hindi</option>
+                    <option>Marathi</option>
+                    <option>Tamil</option>
+                </select><br>
+                <br>
+                <input type="text" name="no" placeholder="Phone number/Email" class="text" required /><br>
+                <br>
+                <input type="password" name="pas" placeholder="Creat possword" class="text" required /><br>
+                <br>
+                <br>
+                <input type="submit" value="Sing in" class="singin" /><br>
+                <br>
+                <input type="checkbox" name="right" value="privecy and security" style="color:rgba(255, 255, 255, 0.541)" required /><span style="color:rgba(255, 255, 255, 0.541)">privecy and security</span>
+            </form>
+        </div>
+
+    </body>
+</html>

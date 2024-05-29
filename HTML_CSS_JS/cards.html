@@ -1,0 +1,316 @@
+<html>
+  <head>
+    <title>Boxes</title>
+  </head>
+  <style>
+    body
+    {
+      
+      margin: 0;
+      background: linear-gradient(to right ,#75CDFF,#4F85FF);
+      border: 10px solid #2B6E93;
+      background-attachment: fixed;
+    }
+    h1
+    {
+      text-align: center;
+      text-transform: uppercase;
+      padding-top: 10px;
+      color: black;
+      background: linear-gradient(to right,#FF0BE6,#6F00FF,#FF0BE6);
+      background-clip: text;
+      -webkit-text-stroke-color: transparent;
+      -webkit-text-stroke-width: calc(3em / 25);
+      -webkit-background-clip: text;
+      font-size: 50px;
+      letter-spacing: 5px;
+    }
+    p
+    {
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;#2EFF00
+      text-transform: capitalize;
+    }
+ 
+    .container {
+      width: 300px;
+      margin: auto;
+      display: flex;
+      justify-content: space-around ;
+      flex-wrap: wrap;
+      -webkit-backdrop-filter: blur();
+    }
+    
+    .box {
+      height: 90px;
+      width: 90px;
+      background-color: transparent;
+      margin: 10px;
+      animation: rotateY(180deg);
+      display: flex;
+      transition: transform 0.3s ease-in-out;
+      position: relative;
+      transform-style: preserve-3d;
+    }
+    
+    button
+    {
+      display: flex;
+      margin : auto;
+      justify-content: center;
+      padding: 5px;
+      width: 200px;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 30px;
+      margin-top: 50px;
+      background:  #2B6E93;
+      border: none;
+      border-radius: 40px;
+    }
+    button:active{
+      box-shadow: 0 0 50px #2B6E93,
+        0 0 25px #2B6E93, 0 0 25px #2B6E93,
+        0 0 25px #2B6E93, 0 0 25px #2B6E93;
+    }
+  .front,
+  .back
+  {
+    border: 2px solid black;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    position: absolute;
+    background-color:  #2B6E93;
+  }
+  
+  .back
+  {
+    transform: rotateY(180deg);
+  }
+  
+  #clr
+  {
+    text-decoration: underline;
+    background-color: black;
+    background-clip: text;
+    -webkit-text-stroke-color: transparent;
+    -webkit-text-stroke-width: calc(1em/16);
+    -webkit-background-clip: text;
+    font-weight: 700;
+    font-size: 50px;
+  }
+    
+  .load
+    {
+      background-color: transparent;
+      border: 10px solid transparent;
+      border-radius: 50%;
+      margin: auto;
+      width: 80px;
+      height: 80px;
+      border-top-color: black;
+      animation: rot 1s infinite;
+      margin-top: 60px;
+    }
+    @keyframes rot
+    {
+      100%
+      {
+        rotate: 360deg;
+        border: 10px solid transparent;
+      }
+    }
+  </style>
+  <body>
+    <h1>Colour Cards Game</h1>
+    <p>find the <span id="clr"></span> colour</p>
+    <div class="container">
+      
+      <div class="box" onclick="flop(0)">
+        <div class="front" id="box1"></div>
+        <div class="back"></div>
+      </div>
+      <div class="box" onclick="flop(1)">
+        <div class="front" id="box2"></div>
+        <div class="back"></div>
+      </div>
+      <div class="box" onclick="flop(2)">
+        <div class="front" id="box3"></div>
+        <div class="back"></div>
+      </div>
+      <div class="box" onclick="flop(3)">
+        <div class="front" id="box4"></div>
+        <div class="back"></div>
+      </div>
+      
+    </div>
+    <button onclick="color()" id="btn">start</button>
+     <div class="load"></div>
+  </body>
+  <script>
+  
+    let color = () => {
+      let rand = Math.random();
+      let var1 = Number.parseInt(rand*10);
+  
+        let box1 = document.getElementById('box1');
+        set_colour(var1,box1);
+        //loop-2
+        while (1)
+        {
+          rand = Math.random();
+          let var2 = Number.parseInt(rand * 10);
+          if (var2 != var1 )
+          {
+            let box2 = document.getElementById('box2');
+            set_colour(var2,box2);
+            //loop-3
+            while(1)
+            {
+              rand = Math.random();
+              let var3 = Number.parseInt(rand*10);
+             if(var3 != var1 && var3 != var2)
+              {
+               let box3 = document.getElementById('box3');
+               set_colour(var3,box3);
+               //loop-4
+               while (1)
+               {
+                 rand = Math.random();
+                 let var4 = Number.parseInt(rand * 10);
+                 
+                 if (var4 != var1 && var4 != var2 && var4 != var3)
+                 {
+                   let box4 = document.getElementById('box4');
+                   set_colour(var4,box4);
+                   find_color(var1,var2,var3,var4);
+                   for(let x=0 ; x < 4 ; x++)
+                   {
+                      flop(x);
+                   }
+                   flip();
+                   break;
+                  }
+                }
+                break;
+              }
+            }
+            break;
+          }
+        }
+    }
+    
+    
+    let set_colour = (clr_num,box) => {
+      switch (clr_num)
+      {
+        case 0:
+          box.style.backgroundColor='blue';
+          break;
+        case 1:
+          box.style.backgroundColor='#CE0000';
+          break;
+        case 2:
+          box.style.backgroundColor='yellow';
+          break;
+        case 3:
+          box.style.backgroundColor='#FF5200';
+          break;
+        case 4:
+          box.style.backgroundColor='black';
+          break;
+        case 5:
+          box.style.backgroundColor='#EB00FF';
+          break;
+        case 6:
+          box.style.backgroundColor='#939393';
+          break;
+        case 7:
+          box.style.backgroundColor='white';
+          break;
+        case 8:
+          box.style.backgroundColor='purple';
+          break;
+        case 9:
+          box.style.backgroundColor='#28A600';
+          break;
+        default:
+          console.log("none");
+      }
+    }
+    
+    let find_color = (v1,v2,v3,v4) => {
+      let clr = document.getElementById('clr');
+      while(1)
+      {
+        let rand_color = Number.parseInt(Math.random()*10);
+       
+        if(rand_color == v1 || rand_color ==   v2 || rand_color == v3 ||          rand_color == v4)
+        {
+          console.log("rand ",rand_color)
+          switch (rand_color)
+          {
+            case 0:
+              clr.style.color='blue';
+              clr.innerHTML = 'Blue';
+            break;
+            case 1:
+              clr.style.color = 'red';
+              clr.innerHTML = 'Red';
+            break;
+            case 2:
+              clr.style.color = 'yellow';
+              clr.innerHTML = 'Yellow';
+            break;
+            case 3:
+              clr.style.color = '#FF5200';
+              clr.innerHTML = 'Orange';
+            break;
+            case 4:
+              clr.style.color = 'black';
+              clr.innerHTML = 'Blabk';
+            break;
+            case 5:
+             clr.style.color = '#EB00FF';
+              clr.innerHTML = 'Pink';
+            break;
+            case 6:
+              clr.style.color = '#454343';
+              clr.innerHTML = 'Gray';
+            break;
+            case 7:
+              clr.style.color = 'white';
+              clr.innerHTML = 'White';
+            break;
+            case 8:
+              clr.style.color = 'purple';
+              clr.innerHTML = 'Purple';
+            break;
+            case 9:
+              clr.style.color = '#28A600';
+              clr.innerHTML = 'Green';
+            break;
+            default:
+              console.log("none");
+          }
+          break;
+        }
+      }
+    }
+    let flip = () => {
+      setTimeout(function(){
+        for(let x=0 ; x<4 ; x++)
+        {
+      document.querySelectorAll('.box')[x].style.transform = "rotateY(180deg)";
+        }
+      },1000)
+    }
+    
+    let flop = (n) => {
+      document.querySelectorAll(".box")[n].style.transform = "rotateY(0deg)";
+    }
+  </script>
+  
+</html>

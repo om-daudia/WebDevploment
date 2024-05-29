@@ -1,0 +1,78 @@
+.bg
+{
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(img1.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.logo
+{
+    height: 60px;
+    width: 200;
+}
+.name
+{
+    height: 200px;
+    width: 400px;
+    margin-top: 150px;
+}
+.line
+{
+    margin-top: -50px;
+    margin-left: 80px;
+    font-size: 20px;
+    color: whitesmoke                ;
+    font-weight: bold;
+}
+.button
+{
+    margin-left: 160px;
+    transition: 0.5s;
+}
+.button a
+{
+    text-decoration: none;
+    color: black;
+}
+.singin
+{
+    color: white;
+    margin-left: 80px;
+}
+.singin a
+{
+    color: red;
+    transition: 0.5s;
+
+}
+.links
+{
+    float: right;
+}
+.links ul li
+{
+    padding: 10px;
+    list-style: none;
+    display: inline-block;
+}
+.right
+{
+    font-weight: bold;
+    border: none;
+    color: white;
+    background: transparent;
+    transition: 0.5s;
+}
+.right:hover
+{
+    color: black;
+    background-color: rgba(150, 7, 7, 0.767);
+}
+.button:hover
+{
+    background-color: rgba(180, 23, 23, 0.877);
+}
+.singin a:hover
+{
+    color: blue;x
+}

@@ -1,0 +1,166 @@
+body
+{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(img5.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.logo
+{
+    width: 150;
+    height: auto;
+    margin-left: 600px;
+}
+.searchbar
+{
+    margin-left: 500px;
+    display: flex;
+    margin-top: 10px;
+}
+.search
+{
+    width: 300px;
+    height: 25px;
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    border-top-left-radius:5px;
+    border-bottom-left-radius: 5px;
+}
+.search-logo
+{
+    width: 20px;
+    height: 25px;
+}
+.name
+{
+    margin-top: 10px;
+    word-spacing: 20px;
+    text-align: center;
+}
+.name a
+{
+    color:white;
+    text-decoration: none;
+    border-right: 1px solid white;
+    padding-right: 20px;  
+    transition: 0.5s;  
+}
+.name a:hover
+{
+    color: blue;
+}
+.movies
+{
+    margin-top: 50px;
+}
+
+.homecomingimg
+{
+    width: 500px;
+    height: auto;
+    transition: 0.5s;
+}
+.homecoming
+{
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+}
+.homecoming:hover
+{
+    background-color: rgba(0,0,0,0.5);
+    color: rgba(255, 255, 255, 0.685);
+}
+.farfromhomeimg
+{
+    width: 500px;
+    height: auto;
+    float: right;
+}
+.farfromhome
+{
+    color: white;
+    text-decoration: none;
+    float: right;
+    margin-right: 30px;
+}
+.farfromhome:hover
+{
+    background-color: rgba(0,0,0,0.5);
+    color: rgba(255, 255, 255, 0.685);
+}
+.nowaytohomeimg
+{
+    width: 500px;
+    height: auto;
+}
+.nowaytohome
+{
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+}
+.nowaytohome:hover
+{
+    background-color: rgba(0,0,0,0.5);
+    color: rgba(255, 255, 255, 0.685);
+}
+.thor1img
+{
+    width: 500px;
+    height: 280px;
+    float: right;
+}
+.thor1
+{
+    color: white;
+    text-decoration: none;
+    float: right;
+    margin-right: 100px;
+}
+.thor1:hover
+{
+    background-color: rgba(0,0,0,0.5);
+    color: rgba(255, 255, 255, 0.685);
+}
+.thor2img
+{
+    width: 500px;
+    height: auto;
+}
+.thor2
+{
+    color: white;
+    text-decoration: none;
+    margin-left: 100px;
+}
+.thor2:hover
+{
+    background-color: rgba(0,0,0,0.5);
+    color: rgba(255, 255, 255, 0.685);
+}
+.thor3img
+{
+    width: 500px;
+    height: 310px;
+    float: right;
+}
+.thor3
+{
+    color: white;
+    text-decoration: none;
+    float: right;
+    margin-right: 100px;
+}
+.thor3:hover
+{
+    background-color: rgba(0,0,0,0.5);
+    color: rgba(255, 255, 255, 0.685);
+}
+.next
+{
+    text-align: center;
+}
+

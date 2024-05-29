@@ -1,0 +1,160 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+body
+{
+    background-image:linear-gradient(to top,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(sunset.jpg);
+
+    /* background-image: url(sunset.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.top-bar
+{
+    /* background-color: rgba(238, 7, 7, 0.922); */
+    justify-content: end;
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+  
+    
+}
+.menu
+{
+    /* background-color: rgba(7, 30, 238, 0.947); */
+    display: flex;
+    justify-content: end;
+    height: 50px;
+}
+.menu-btn
+{
+    margin: 0 15px;
+    font-size: 18px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    background-color:transparent;
+    color: white;
+    transition: 0.5s;
+}
+.menu-btn:hover
+{
+    color: rgb(255, 132, 1);
+    font-size: 17.9px;
+}
+.menu-btn:focus
+{
+    color: rgb(255, 132, 1);
+}
+
+.container
+{
+    display: flex;
+    
+}
+
+.book
+{
+    /* -webkit-backdrop-filter: blur(); */
+    width: 300px;
+    margin-top: 80px;
+    margin-left: 100px;
+    padding: 20px;
+    border-radius: 20px ;
+    border:2px solid rgb(255, 132, 1);
+    transition: 0.5s;
+}
+.book:hover
+{
+    box-shadow: 0 0 5px rgb(202, 201, 201),0 0 20px rgb(202, 201, 201);
+}
+.book h1
+{
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 20px 0;
+}
+.book h1 span
+{
+    color: rgb(255, 132, 1);
+}
+
+.book form
+{
+    display: grid;
+}
+.text
+{
+    margin: 15px;
+    color: white;
+    font-size: 15px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    border-radius: 5px;
+    outline: none;
+    padding: 5px;
+    transition: 0.5s;
+}
+.text:hover
+{
+    border-bottom: 3.6px solid rgb(255, 132, 1);
+}
+.text:focus
+{
+    border-bottom: 3px solid hsl(31, 100%, 50%);
+}
+.text::placeholder
+{
+    color: rgb(255, 255, 255);
+    text-transform: capitalize;
+}
+
+.btn
+{
+    width: 100px;
+    background-color: transparent;
+    border: 2px solid  rgb(255, 132, 1);
+    color: white;
+    margin: auto;
+    margin-top: 15px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+.btn:hover
+{
+    background-color:rgb(255, 132, 1) ;
+}
+
+.head
+{
+    position: relative;
+    margin-top: 180px;
+    margin-left: 150px;
+}
+.head h1
+{
+    color: rgb(255, 255, 255);
+    font-size: 70px;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 40px 0;
+}
+.head h1 span
+{
+    color: rgb(255, 132, 1);
+}
+.head p
+{
+    color: white;
+    font-size: 20px;
+    text-transform: capitalize;
+    word-spacing: 5px;
+}

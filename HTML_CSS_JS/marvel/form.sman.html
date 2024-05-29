@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>form</title>
+    </head>
+    <style type="text/css">
+        body
+        {
+            background-image:linear-gradient(to top,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(images\ \(10\).jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .form
+        {
+            text-align: center;
+            height: 300px;
+            width: 600px;
+            background:linear-gradient(to top,rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+            margin-left: 200px;
+            margin-top: 200px;
+            border-radius: 20px;
+        }
+        .form h1
+        {
+            color: rgb(134, 0, 0);
+            font-size: 50px;
+        }
+        .text
+        {
+            color: white;
+            width: 500px;
+            background: transparent;
+            border-bottom: 2px solid white;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            padding-bottom: 5px;
+        }
+        .login
+        {
+            color: black;
+            background-color: rgb(181, 183, 185);
+        }
+        .login:hover
+        {
+            background-color: rgba(153, 10, 10, 0.781);
+        }
+        a
+        {
+            color: red;
+            text-decoration: none;
+        }
+        p
+        {
+            background-color:rgba(0,0,0,0.5);
+            color: white;
+            margin-top: 50PX;
+            padding-left: 200px;
+        }
+        
+    </style>
+    <body>
+        <div>
+            <p><a href="mainpage.html">Home</a> / log_in</p>
+            <form class="form" action="movies.html" method="post" name="form">
+                <h1>MARVEL</h1>
+                    <input type="text" name="name" placeholder="user name, number,Email" class="text" required autofocus /><br>
+                    <br>
+                    <input type="password" name="password" placeholder="Enter possword" class="text" required /><br>
+                    <br>
+                    <input type="checkbox" name="check" required style="color:rgba(255, 255, 255, 0.541)" /><span style="color:rgba(255, 255, 255, 0.541)">privecy and security</span>
+                    <br>
+                    <br>
+                    <input type="submit" value="Log in" class="login"><br>
+                    <br>
+                    <a href="#">forgot password</a>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,183 @@
+<html>
+  <head>
+    <title>clock</title>
+  </head>
+  <style>
+    body
+    {
+      background: linear-gradient(to left,whitesmoke,#CAE1FF);
+    }
+   
+    .container 
+    {
+      background: rgb(0,0,0,0.2);
+      width: 200px;
+      height: 230px;
+      position: relative;
+      top: 20%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      border-radius: 50%;
+      border-bottom: 5px solid black;
+      border-right: 2px solid black;
+    }
+   
+    .container::before
+    {
+      content: '';
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      background: linear-gradient(to right, rgb(0,0,0,0.4), #fafaf7);
+      bottom: 10%;
+      right: 0%;
+      border-radius: 50%;
+      z-index: -1;
+      filter: blur(2px);
+      animation: pro 1s infinite ease-in-out;
+    }
+     @keyframes pro 
+    {
+      100%
+      {
+        background: transparent;
+      }
+    }
+    .container::after
+    {
+      content: '';
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      display: flex;
+      background: linear-gradient(#fafaf7, rgb(0,0,0,0.3));
+      top: 0%;
+      left: -5%;
+      border-radius: 50%;
+      z-index: 1;
+      filter: blur(1.5px);
+      animation: lef 1s infinite ease-in-out;
+    }
+     @keyframes lef
+    {
+      50%
+      {
+        background: transparent;
+      }
+    }
+    .num
+    {
+      color: whitesmoke;
+      margin: 0% auto;
+      font-size: 80px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    #sec
+    {
+      color: white;
+      font-size: 20px;
+      top: 10px;
+      right: 0%;
+    }
+    .date
+    {
+      width: 200px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .day
+    {
+      color: whitesmoke;
+      margin: 0% 10px;
+    }
+    .month
+    {
+      color: whitesmoke;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <span class="num" id="hrs"></span>
+      <span class="num" id="min"></span>
+      <!--<span class="num" id="sec"></span>-->
+      <div class="date">
+        <span class="day" id="day"></span>
+        <div>
+          <span class="month" id="dt"></span>
+          <span class="month" id="mon"></span>
+        </div>
+        
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+
+  
+  let hrs = document.getElementById('hrs');
+  let min = document.getElementById('min');
+  //let sec = document.getElementById('sec');
+  let day = document.getElementById('day');
+  let dt = document.getElementById('dt');
+  let mon = document.getElementById('mon');
+  
+  setInterval(()=> {
+    
+    let time = new Date();
+   let h = time.getHours();
+    if(h > 12)
+    {
+      h -= 12;
+      hrs.innerHTML = (h < 10?"0":"")+h;
+    }
+    else
+    {
+      hrs.innerHTML = (h < 10?"0":"")+h;
+    }
+    
+    
+    min.innerHTML = (time.getMinutes()<10?"0":"") + time.getMinutes() ;
+    //sec.innerHTML = time.getSeconds();
+    dt.innerHTML = time.getDate() + "/";
+    mon.innerHTML = (time.getMonth()<10?"0":'') + (time.getMonth()+1);
+    
+    let num = time.getDay();
+    switch(num)
+    {
+      case 1:
+        day.innerHTML ='Monday';
+      break;
+      
+      case 2:
+        day.innerHTML = 'Teusday';
+      break;
+      
+      case 3:
+        day.innerHTML = 'Wednesday';
+      break;
+      
+      case 4:
+        day.innerHTML = 'Thursday';
+      break;
+      
+      case 5:
+        day.innerHTML = 'Friday';
+      break;
+      
+      case 6:
+        day.innerHTML = 'Saturday';
+      break;
+      
+      case 7:
+        day.innerHTML = 'Sunday';
+      break;
+    }
+   
+  },1000)
+  
+  
+</script>
