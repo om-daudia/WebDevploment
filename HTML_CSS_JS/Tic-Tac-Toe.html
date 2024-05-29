@@ -1,0 +1,500 @@
+<html>
+  <head>
+    <title>game</title>
+  </head>
+  <style>
+    body
+    {
+      background-image: linear-gradient(to bottom right,#ffcccb,white,#add8e6);
+      background-attachment: fixed; 
+    }
+    .container 
+    {
+      background : transperent;
+      padding: 30px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .row
+    {
+      display: flex;
+      justify-content: center;
+    }
+    .box
+    {
+      height: 100px;
+      width: 100px;
+      
+      font-size: 80px;
+      font-weight: bold;
+      text-align: center;
+      padding: 0px;
+      border : 5px solid black;;
+    }
+    .turn
+    {
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+    }
+    .user
+    {
+      display: flex;
+      justify-content: space-between;
+      padding: 0px 40px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    #res
+    {
+      display: flex;
+      margin : auto;
+      justify-content: center;
+      padding: 5px;
+      width: 200px;
+      height: 50px;
+      font-weight: bold;
+      font-size: 30px;
+      margin-top: 50px;
+      background-color: white;
+      border-radius: 40px;
+      border: 2px solid black;
+    }
+    .bt
+    {
+      border-top: none;
+    }
+    .br
+    {
+      border-right: none;
+    }
+    .bb
+    {
+      border-bottom: none;
+    }
+    .bl
+    {
+      border-left: none;
+    }
+    
+  </style>
+  <body>
+ 
+     <p class="turn">Turn - <u><span id="show"></span></u></p>
+     <h3 align="center">SCORE</h3>
+     <div class="user">
+       <div>Player X - <span id="p1" style="font-size: 30px"></span></div>
+       <div><span id="p2" style="font-size: 30px"></span> - O Player</div>
+     </div>
+     <h3 id="win" class="turn"></h3>
+    <div class="container">
+      
+    <div class="row">
+      <div class="box bt bl" id="btn1" 
+      onclick="box1()" ></div>
+      <div class="box bt" id="btn2" 
+      onclick="box2()"></div>
+      <div class="box br bt" id="btn3" 
+      onclick="box3()"></div>
+    </div>
+    
+    <div class="row">
+      <div class="box bl" id="btn4" 
+      onclick="box4()"></div>
+      <div class="box" id="btn5" 
+      onclick="box5()"></div>
+      <div class="box br" id="btn6" 
+      onclick="box6()"></div>
+    </div>
+    
+    <div class="row">
+      <div class="box bl bb" id="btn7" 
+      onclick="box7()"></div>
+      <div class="box bb" id="btn8" 
+      onclick="box8()"></div>
+      <div class="box br bb" id="btn9" 
+      onclick="box9()"></div>
+      </div>
+    </div>
+    
+     <button id="res" onclick="res()">RESET</button>
+     
+    <script>
+    
+      var dies = 'X';
+      var turn = document.getElementById('show');
+      turn.innerHTML = dies;
+        
+      var f1;
+      var f2;
+      var f3;
+      var f4;
+      var f5;
+      var f6;
+      var f7;
+      var f8;
+      var f9;
+      
+      var player1=0;
+      var player2=0;
+      
+      var user1 = 0;
+      var user2 = 0;
+      
+      //box 1 ---------
+      function box1()
+      {
+        var b1 = document.getElementById('btn1');
+        b1.innerHTML=dies;
+     
+        f1 = dies;
+        if(f1 == 'X')
+        {
+          b1.style.color='red';
+        }
+        else 
+        {
+            b1.style.color='blue';
+        }
+        display_turn(); //dispalay turn X/O
+        cros(); // check all the possibility of X
+        circle(); // check all the        possibility of O
+        
+    
+      }
+  
+      //box 2 ---------
+      function box2()
+      {
+     var b2 = document.getElementById('btn2');
+      b2.innerHTML=dies;
+      f2 = dies;
+      if (f2 == 'X')
+      {
+        b2.style.color = 'red';
+      }
+      else
+      {
+        b2.style.color = 'blue';
+      }
+      display_turn();
+      cros();
+      circle();
+      }
+      
+      //box 3--------
+      function box3()
+      {
+        var b3 = document.getElementById('btn3');
+        b3.innerHTML = dies;
+        f3 = dies;
+        if (f3 == 'X')
+        {
+          b3.style.color = 'red';
+        }
+        else
+        {
+          b3.style.color = 'blue';
+        }
+        display_turn();
+        cros();
+        circle();
+      }
+      
+      //box 4 ------
+      function box4()
+      {
+        var b4 = document.getElementById('btn4');
+        b4.innerHTML=dies;
+        f4 = dies;
+        if (f4 == 'X')
+        {
+          b4.style.color = 'red';
+        }
+        else
+        {
+          b4.style.color = 'blue';
+        }
+        display_turn();
+        cros();
+        circle();
+      }
+      //box 5 -----
+      function box5()
+      {
+        var b5 = document.getElementById('btn5');
+        b5.innerHTML = dies;
+        f5 = dies;
+        if (f5 == 'X')
+        {
+          b5.style.color = 'red';
+        }
+        else
+        {
+          b5.style.color = 'blue';
+        }
+        display_turn();
+        cros();
+        circle();
+      }
+      
+      //box 6 ---------
+      function box6()
+      {
+        var b6 = document.getElementById('btn6');
+        b6.innerHTML = dies;
+        f6 = dies;
+        if (f6 == 'X')
+        {
+          b6.style.color = 'red';
+        }
+        else
+        {
+          b6.style.color = 'blue';
+        }
+        display_turn();
+        cros();
+        circle();
+      }
+      
+      //box 7 ------
+      function box7()
+      {
+        var b7 = document.getElementById('btn7');
+        b7.innerHTML = dies;
+        f7 = dies;
+        if (f7 == 'X')
+        {
+          b7.style.color = 'red';
+        }
+        else
+        {
+          b7.style.color = 'blue';
+        }
+        display_turn();
+        cros();
+        circle();
+      }
+      
+      //box 8 -----
+      function box8()
+      {
+        var b8 = document.getElementById('btn8');
+        b8.innerHTML = dies;
+        f8 = dies;
+        if (f8 == 'X')
+        {
+          b8.style.color = 'red';
+        }
+        else
+        {
+          b8.style.color = 'blue';
+        }
+        display_turn();
+        cros();
+        circle();
+      }
+     
+      //box 9---------
+      function box9()
+      {
+        var b9 = document.getElementById('btn9');
+        b9.innerHTML = dies;
+        f9 = dies;
+        if (f9 == 'X')
+        {
+          b9.style.color = 'red';
+        }
+        else
+        {
+          b9.style.color = 'blue';
+        }
+        display_turn();
+        cros();
+        circle()
+      }
+      
+      
+      function cros()
+      {
+        if (f1=='X' && f2=='X' && f3=='X')
+        {
+          user1=1;
+          
+          setTimeout(winner, 100);
+          
+        }
+        else
+        if (f4=='X' && f5=='X' && f6=='X')
+        {
+          user1 = 1;
+          setTimeout(winner, 100);
+        }
+        else
+        if (f7=='X' && f8=='X' && f9=='X')
+        {
+          user1 = 1;
+          setTimeout(winner, 100);
+        }
+        else
+        if (f1=='X' && f4=='X' && f7=='X')
+        {
+          user1 = 1;
+          setTimeout(winner, 100);
+        }
+        else
+        if (f2=='X' && f5=='X' && f8=='X')
+        {
+          user1 = 1;
+          setTimeout(winner, 100);
+        }
+        else
+        if (f3=='X' && f6=='X' && f9=='X')
+        {
+          user1 = 1;
+          setTimeout(winner, 100);
+        }
+        else
+        if (f1=='X' && f5=='X' && f9=='X')
+        {
+          user1 = 1;
+          setTimeout(winner, 100);
+        }
+        else
+        if (f3=='X' && f5=='X' && f7=='X')
+        {
+          user1 = 1;
+          setTimeout(winner, 100);
+        }
+      }
+    
+     function circle()
+      {
+        if(f1=='O' && f2=='O' && f3=='O')
+        {
+          user2 = 1; 
+          setTimeout(winner, 100);
+        }
+        else 
+        if(f4=='O' && f5=='O' && f6 =='O')
+        {
+          user2 = 1;
+          setTimeout(winner, 100);
+        }
+        else 
+        if(f7=='O' && f8=='O' && f9=='O')
+        {
+          user2 = 1;
+          setTimeout(winner, 100);
+        }
+        else 
+        if(f1=='O' && f4=='O' && f7=='O')
+        {
+          user2 = 1;
+          setTimeout(winner, 100);
+        }
+        else 
+        if(f2=='O' && f5=='O' && f8=='O')
+        {
+          user2 = 1;
+          setTimeout(winner, 100);
+        }
+        else 
+        if(f3=='O' && f6=='O' && f9=='O')
+        {
+          user2 = 1;
+          setTimeout(winner, 100);
+        }
+        else 
+        if(f1=='O' && f5=='O' && f9=='O')
+        {
+          user2 = 1;
+          setTimeout(winner, 100);
+        }
+        else
+        if(f3=='O' && f5=='O' && f7=='O')
+        {
+          user2 = 1;
+          setTimeout(winner, 100);
+        }
+        else 
+        if(f1!=null && f2!=null && f3!=null && f4!=null && f5!=null && f6!=null && f7!=null && f8!=null && f9!=null)
+        {
+         setTimeout(clr, 100);
+        }
+      }
+      
+      function winner()
+      {
+        if (dies == 'O')
+        {
+          alert("Player X win");
+          var a = document.getElementById('win').innerHTML = "Player X ahead";
+          var x = document.getElementById('p1');
+          player1++;
+          x.innerHTML = player1;
+          x.style.color='red';
+          user1 = 0;
+        }
+        else
+        {
+          alert("Player O win");
+          var a = document.getElementById('win').innerHTML = "Player O ahead";
+          var x = document.getElementById('p2');
+          player2++;
+          x.innerHTML = player2;
+          x.style.color='blue';
+          user2 = 0;
+        }
+      
+        clr(); // cleat all
+      }
+      
+      function display_turn()
+      {
+        if (dies == 'X')
+        {
+          dies = 'O';
+          var turn = document.getElementById('show');
+          turn.innerHTML = dies;
+        }
+        else
+        {
+          dies = 'X';
+          var turn = document.getElementById('show');
+          turn.innerHTML = dies;
+        }
+      }
+      
+      function clr()
+      {
+        var b1 = document.getElementById('btn1').innerHTML = null;
+        var b2 = document.getElementById('btn2').innerHTML = null;
+        var b3 = document.getElementById('btn3').innerHTML = null;
+        var b4 = document.getElementById('btn4').innerHTML = null;
+        var b5 = document.getElementById('btn5').innerHTML = null;
+        var b6 = document.getElementById('btn6').innerHTML = null;
+        var b7 = document.getElementById('btn7').innerHTML = null;
+        var b8 = document.getElementById('btn8').innerHTML = null;
+        var b9 = document.getElementById('btn9').innerHTML = null;
+        f1=f2=f3=f4=f5=f6=f7=f8=f9= null;
+      }
+      
+      function res()
+      {
+        var x=document.getElementById('p1');
+          x.innerHTML = null;
+        var y=document.getElementById('p2');
+          y.innerHTML = null;
+          var a = document.getElementById('win').innerHTML = null;
+          player1=0;
+          player2=0;
+          
+          clr();
+          
+          dies = 'X';
+          turn = document.getElementById('show').innerHTML = dies;
+      }
+    </script>
+  </body>
+</html>
